@@ -42,10 +42,14 @@ app.get('/search', (req, res) => {
     searchResult = books.filter(book => regex.test(book.title));
   } else if (searchByYear) {
     searchResult = books.filter(book => book.year === parseInt(searchByYear));
+  } else {
+    // If no search parameters are provided, return all books
+    searchResult = books;
   }
 
   res.render('search', { searchResult });
 });
+
 
 
 app.listen(port, () => {
