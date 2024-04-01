@@ -43,7 +43,7 @@ app.get('/search', (req, res) => {
   } else if (searchByYear) {
     searchResult = books.filter(book => book.year === parseInt(searchByYear));
   } else {
-    // If no search parameters are provided, return all books
+  
     searchResult = books;
   }
 
